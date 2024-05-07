@@ -1,10 +1,11 @@
 <?php
-
+session_start();
+require_once("common/dbconfig.php");
 
 function AddBook($book, $db)
 {
     //insert query
-    $query = "INSERT INTO `tbl_books` (`BOOK`,`DESCRIPTION`) VALUES ('$user->book','$book->description')";
+    $query = "INSERT INTO `tbl_books` (`BOOK`,`DESCRIPTION`) VALUES ('$book->book','$book->description')";
     $stmt = $db->query($query);
     if ($stmt->rowCount() > 0)
         return 1;

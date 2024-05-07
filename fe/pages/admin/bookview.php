@@ -1,6 +1,6 @@
 <?php
 
-function listbook($book)
+function listbook($books)
 {
 ?>
     <h1>
@@ -19,7 +19,7 @@ function listbook($book)
         </tr>
 
         <?php
-        foreach ($book as $book) { ?>
+        foreach ($books as $book) { ?>
             <tr>
                 <td><?php echo $book->username; ?></td>
                 <td><?php echo $book->name; ?></td>

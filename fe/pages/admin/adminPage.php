@@ -11,20 +11,28 @@
       rel="stylesheet"
     />
 
-    <title>GT Book Store - Contact Page</title>
+    <title>GT Book Shop</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="fe/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="../assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="../assets/css/templatemo-lugx-gaming.css" />
-    <link rel="stylesheet" href="../assets/css/owl.css" />
-    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="fe/assets/css/MyStyle.css">  
+    <link rel="stylesheet" href="fe/assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="fe/assets/css/templatemo-lugx-gaming.css" />
+    <link rel="stylesheet" href="fe/assets/css/owl.css" />
+    <link rel="stylesheet" href="fe/assets/css/animate.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
     />
+    <!--
+
+TemplateMo 589 lugx gaming
+
+https://templatemo.com/tm-589-lugx-gaming
+
+-->
   </head>
 
   <body>
@@ -48,9 +56,9 @@
           <div class="col-12">
             <nav class="main-nav">
               <!-- ***** Logo Start ***** -->
-              <a href="../../index.php" class="logo">
+              <a href="index.php" class="logo">
                 <img
-                  src="../assets/images/logo1.png"
+                  src="fe/assets/images/logo1.png"
                   alt=""
                   style="width: 158px"
                 />
@@ -58,10 +66,7 @@
               <!-- ***** Logo End ***** -->
               <!-- ***** Menu Start ***** -->
               <ul class="nav">
-                <li><a href="../../index.php">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html" class="active">Contact Us</a></li>
-                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="index.php">Log Out</a></li>
               </ul>
               <a class="menu-trigger">
                 <span>Menu</span>
@@ -74,35 +79,32 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <div class="page-heading header-text">
+    <div class="main-banner">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
-            <h3>Contact Us</h3>
+          <div class="caption header-text">
           </div>
         </div>
       </div>
     </div>
 
-    <div class="contact-page section">
+    <div class="section trending">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 align-self-center">
+          <div class="col-lg-6">
             <div class="section-heading">
-              <h6>Contact Us</h6>
-              <h2>Say Hello!</h2>
+              <h2>Our Books</h2>
             </div>
-            <p>
-              GT is always ready for your inquiries. Please feel free to reach
-              out.
-            </p>
-            <ul>
-              <li><span>Address</span> Nicol Hall Room 510, LAU, Lebanon</li>
-              <li><span>Phone</span> +961 70 102 681</li>
-              <li><span>Email</span> GT@lau.edu.lb</li>
-            </ul>
           </div>
-          <div class="col-lg-6"></div>
+          <div class="col-lg-6">
+            <div class="main-button"></div>
+          </div>
+          
+          <?php require_once("be/bookModel.php"); $books = GetBooks($db); ?>
+          <?php
+        listbook($books)?>
+          
+          </div>
         </div>
       </div>
     </div>
@@ -117,11 +119,11 @@
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/isotope.min.js"></script>
-    <script src="../assets/js/owl-carousel.js"></script>
-    <script src="../assets/js/counter.js"></script>
-    <script src="../assets/js/custom.js"></script>
+    <script src="fe/vendor/jquery/jquery.min.js"></script>
+    <script src="fe/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="fe/assets/js/isotope.min.js"></script>
+    <script src="fe/assets/js/owl-carousel.js"></script>
+    <script src="fe/assets/js/counter.js"></script>
+    <script src="fe/assets/js/custom.js"></script>
   </body>
 </html>
