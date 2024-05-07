@@ -61,4 +61,51 @@ function DeleteBook($id)
     }
 }
 
+
+function GetBook($id, $db)
+{
+    // Prepare the SELECT statement to avoid SQL injection
+    $query = "SELECT * FROM `tbl_books` WHERE `ID` = :id";
+    $stmt = $db->prepare($query);
+
+    // Bind the ID to the prepared statement
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        // Fetch the book details
+        $bookDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($bookDetails) {
+            return $bookDetails;  // Return the book details array
+        } else {
+            return null;  // Return null if no book was found
+        }
+    } else {
+        return false;  // Return false if the query failed to execute
+    }
+}
+
+function GetBooks($db)
+{
+    // Prepare the SELECT statement to fetch all books
+    $query = "SELECT * FROM `tbl_books`";
+    $stmt = $db->prepare($query);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        // Fetch all book details
+        $booksDetails = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($booksDetails) {
+            return $booksDetails;  // Return the array of book details
+        } else {
+            return [];  // Return an empty array if no books are found
+        }
+    } else {
+        return false;  // Return false if the query failed to execute
+    }
+}
+
+
+
 ?>
+
