@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+require_once("common/dbconfig.php");
 /**
  * adds a user to array users
  * @param $user is a dictionary with user attributes

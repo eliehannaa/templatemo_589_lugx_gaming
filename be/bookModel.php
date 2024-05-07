@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+require_once("common/dbconfig.php");
 
 function AddBook($book, $db)
 {
