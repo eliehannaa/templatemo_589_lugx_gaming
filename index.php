@@ -56,7 +56,7 @@ https://templatemo.com/tm-589-lugx-gaming
           <div class="col-12">
             <nav class="main-nav">
               <!-- ***** Logo Start ***** -->
-              <a href="index.html" class="logo">
+              <a href="index.php" class="logo">
                 <img
                   src="fe/assets/images/logo1.png"
                   alt=""
@@ -66,7 +66,7 @@ https://templatemo.com/tm-589-lugx-gaming
               <!-- ***** Logo End ***** -->
               <!-- ***** Menu Start ***** -->
               <ul class="nav">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.php" class="active">Home</a></li>
                 <li>
                   <a href="fe/pages/about.html">About Us</a>
                 </li>
@@ -106,66 +106,24 @@ https://templatemo.com/tm-589-lugx-gaming
           <div class="col-lg-6">
             <div class="main-button"></div>
           </div>
+          
+          <?php require_once("be/bookModel.php"); $books = GetBooks(); ?>
+          <?php
+        foreach ($books as $book) { ?>
           <div class="col-lg-3 col-md-6">
             <div class="item">
               <div class="thumb">
-                <a href="about.html"
-                  ><img src="fe/assets/images/trending-01.jpg" alt=""
-                /></a>
-                <span class="price"><em>$28</em>$20</span>
-              </div>
-              <div class="down-content">
-                <span class="category">Action</span>
-                <h4>Assasin Creed</h4>
-                <a href="about.html"><i class="fa fa-shopping-bag"></i></a>
+                <img src="fe/assets/images/books/<?php echo $book->id; ?>.jpg" alt=""
+                />
+                <div class="price">Name: <?php echo $book->book; ?></div>
+                <div class="price">Description: <?php echo $book->description; ?></div>
+                <div class="price">Is Active: <?php echo $user->isActive ? 0 : 1; ?></div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="item">
-              <div class="thumb">
-                <a href="about.html"
-                  ><img src="fe/assets/images/trending-02.jpg" alt=""
-                /></a>
-                <span class="price">$44</span>
-              </div>
-              <div class="down-content">
-                <span class="category">Action</span>
-                <h4>Assasin Creed</h4>
-                <a href="about.html"><i class="fa fa-shopping-bag"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="item">
-              <div class="thumb">
-                <a href="about.html"
-                  ><img src="fe/assets/images/trending-03.jpg" alt=""
-                /></a>
-                <span class="price"><em>$64</em>$44</span>
-              </div>
-              <div class="down-content">
-                <span class="category">Action</span>
-                <h4>Assasin Creed</h4>
-                <a href="about.html"><i class="fa fa-shopping-bag"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="item">
-              <div class="thumb">
-                <a href="about.html"
-                  ><img src="fe/assets/images/trending-04.jpg" alt=""
-                /></a>
-                <span class="price">$32</span>
-              </div>
-              <div class="down-content">
-                <span class="category">Action</span>
-                <h4>Assasin Creed</h4>
-                <a href="about.html"><i class="fa fa-shopping-bag"></i></a>
-              </div>
-            </div>
-          </div>
+          <?php
+        }
+        ?>
         </div>
       </div>
     </div>
