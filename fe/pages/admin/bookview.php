@@ -13,6 +13,7 @@ function listbook($book)
             <th>ID</th>
             <th>Name</th>
             <th>Status</th>
+            <th>Description</th>
             <th></th>
             <th></th>
         </tr>
