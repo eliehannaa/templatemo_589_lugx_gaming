@@ -2,7 +2,6 @@
 session_start();
 require_once("common/dbconfig.php");
 
-
 if (!isMissingArgs()){
     $un=$_POST["tfun"];
     $pass=$_POST["tfpass"];
