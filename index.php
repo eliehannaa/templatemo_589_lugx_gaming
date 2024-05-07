@@ -107,7 +107,7 @@ https://templatemo.com/tm-589-lugx-gaming
             <div class="main-button"></div>
           </div>
           
-          <?php require_once("be/bookModel.php"); $books = GetBooks(); ?>
+          <?php require_once("be/bookModel.php"); $books = GetBooks($db); ?>
           <?php
         foreach ($books as $book) { ?>
           <div class="col-lg-3 col-md-6">
@@ -117,7 +117,7 @@ https://templatemo.com/tm-589-lugx-gaming
                 />
                 <div class="price">Name: <?php echo $book->book; ?></div>
                 <div class="price">Description: <?php echo $book->description; ?></div>
-                <div class="price">Is Active: <?php echo $user->isActive ? 0 : 1; ?></div>
+                <div class="price">Is Active: <?php echo $book->isActive ? 0 : 1; ?></div>
               </div>
             </div>
           </div>
