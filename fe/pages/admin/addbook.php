@@ -136,7 +136,6 @@ https://templatemo.com/tm-589-lugx-gaming
     </footer>
 
     <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
     <script src="../../../fe/vendor/jquery/jquery.min.js"></script>
     <script src="../../../fe/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../fe/assets/js/isotope.min.js"></script>
